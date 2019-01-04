@@ -1,0 +1,450 @@
+Analysis & Synthesis report for game
+Thu Nov 16 20:09:25 2017
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Registers Removed During Synthesis
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                               ;
++-----------------------------+----------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Nov 16 20:09:25 2017        ;
+; Quartus II Version          ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
+; Revision Name               ; game                                         ;
+; Top-level Entity Name       ; game                                         ;
+; Family                      ; MAX II                                       ;
+; Total logic elements        ; 1,338                                        ;
+; Total pins                  ; 61                                           ;
+; Total virtual pins          ; 0                                            ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                                ;
++-----------------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                          ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Option                                                       ; Setting            ; Default Value      ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Device                                                       ; EPM1270T144C5      ;                    ;
+; Top-level entity name                                        ; game               ; game               ;
+; Family name                                                  ; MAX II             ; Stratix II         ;
+; Use Generated Physical Constraints File                      ; Off                ;                    ;
+; Use smart compilation                                        ; Off                ; Off                ;
+; Restructure Multiplexers                                     ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                          ; Off                ; Off                ;
+; Preserve fewer node names                                    ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                    ; Off                ; Off                ;
+; Verilog Version                                              ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                 ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                     ; Auto               ; Auto               ;
+; Safe State Machine                                           ; Off                ; Off                ;
+; Extract Verilog State Machines                               ; On                 ; On                 ;
+; Extract VHDL State Machines                                  ; On                 ; On                 ;
+; Ignore Verilog initial constructs                            ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                   ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops               ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                      ; On                 ; On                 ;
+; Parallel Synthesis                                           ; Off                ; Off                ;
+; NOT Gate Push-Back                                           ; On                 ; On                 ;
+; Power-Up Don't Care                                          ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                 ; Off                ; Off                ;
+; Remove Duplicate Registers                                   ; On                 ; On                 ;
+; Ignore CARRY Buffers                                         ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                       ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                    ; Off                ; Off                ;
+; Ignore LCELL Buffers                                         ; Off                ; Off                ;
+; Ignore SOFT Buffers                                          ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                               ; Off                ; Off                ;
+; Optimization Technique                                       ; Balanced           ; Balanced           ;
+; Carry Chain Length                                           ; 70                 ; 70                 ;
+; Auto Carry Chains                                            ; On                 ; On                 ;
+; Auto Open-Drain Pins                                         ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                        ; Off                ; Off                ;
+; Auto Shift Register Replacement                              ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                ; On                 ; On                 ;
+; Allow Synchronous Control Signals                            ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                       ; Off                ; Off                ;
+; Auto Resource Sharing                                        ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing          ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives            ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report           ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                           ; Off                ; Off                ;
+; Synchronization Register Chain Length                        ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                 ; Normal compilation ; Normal compilation ;
+; HDL message level                                            ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages              ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report     ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report    ; 100                ; 100                ;
+; Clock MUX Protection                                         ; On                 ; On                 ;
+; Block Design Naming                                          ; Auto               ; Auto               ;
+; Synthesis Effort                                             ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                           ; Medium             ; Medium             ;
++--------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                          ;
++----------------------------------+-----------------+-----------------+------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path             ;
++----------------------------------+-----------------+-----------------+------------------------------------------+
+; jp.vhd                           ; yes             ; User VHDL File  ; F:/最终的vhdl/game/jp.vhd                ;
+; lcd.vhd                          ; yes             ; User VHDL File  ; F:/最终的vhdl/game/lcd.vhd               ;
+; dianzheng.vhd                    ; yes             ; User VHDL File  ; F:/最终的vhdl/game/dianzheng.vhd         ;
+; fmq.vhd                          ; yes             ; User VHDL File  ; F:/最终的vhdl/game/fmq.vhd               ;
+; sjs.vhd                          ; yes             ; User VHDL File  ; F:/最终的vhdl/game/sjs.vhd               ;
+; invariable_number.vhd            ; yes             ; User VHDL File  ; F:/最终的vhdl/game/invariable_number.vhd ;
+; control.vhd                      ; yes             ; User VHDL File  ; F:/最终的vhdl/game/control.vhd           ;
+; game.vhd                         ; yes             ; User VHDL File  ; F:/最终的vhdl/game/game.vhd              ;
+; exchange.vhd                     ; yes             ; User VHDL File  ; F:/最终的vhdl/game/exchange.vhd          ;
++----------------------------------+-----------------+-----------------+------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 1338  ;
+;     -- Combinational with no register       ; 924   ;
+;     -- Register only                        ; 81    ;
+;     -- Combinational with a register        ; 333   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 708   ;
+;     -- 3 input functions                    ; 229   ;
+;     -- 2 input functions                    ; 304   ;
+;     -- 1 input functions                    ; 15    ;
+;     -- 0 input functions                    ; 1     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 1106  ;
+;     -- arithmetic mode                      ; 232   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 109   ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 414   ;
+; Total logic cells in carry chains           ; 245   ;
+; I/O pins                                    ; 61    ;
+; Maximum fan-out node                        ; CLK   ;
+; Maximum fan-out                             ; 403   ;
+; Total fan-out                               ; 5046  ;
+; Average fan-out                             ; 3.61  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name        ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------+--------------+
+; |game                      ; 1338 (0)    ; 414          ; 0          ; 61   ; 0            ; 924 (0)      ; 81 (0)            ; 333 (0)          ; 245 (0)         ; 0 (0)      ; |game                      ; work         ;
+;    |control:u4|            ; 186 (186)   ; 111          ; 0          ; 0    ; 0            ; 75 (75)      ; 24 (24)           ; 87 (87)          ; 26 (26)         ; 0 (0)      ; |game|control:u4           ; work         ;
+;    |dianzheng:u3|          ; 105 (105)   ; 41           ; 0          ; 0    ; 0            ; 64 (64)      ; 16 (16)           ; 25 (25)          ; 26 (26)         ; 0 (0)      ; |game|dianzheng:u3         ; work         ;
+;    |exchange:u8|           ; 134 (134)   ; 28           ; 0          ; 0    ; 0            ; 106 (106)    ; 4 (4)             ; 24 (24)          ; 0 (0)           ; 0 (0)      ; |game|exchange:u8          ; work         ;
+;    |fmq:u5|                ; 341 (341)   ; 111          ; 0          ; 0    ; 0            ; 230 (230)    ; 8 (8)             ; 103 (103)        ; 107 (107)       ; 0 (0)      ; |game|fmq:u5               ; work         ;
+;    |invariable_number:u7|  ; 140 (140)   ; 22           ; 0          ; 0    ; 0            ; 118 (118)    ; 10 (10)           ; 12 (12)          ; 17 (17)         ; 0 (0)      ; |game|invariable_number:u7 ; work         ;
+;    |jp:u1|                 ; 130 (130)   ; 53           ; 0          ; 0    ; 0            ; 77 (77)      ; 19 (19)           ; 34 (34)          ; 48 (48)         ; 0 (0)      ; |game|jp:u1                ; work         ;
+;    |lcd:u2|                ; 222 (222)   ; 24           ; 0          ; 0    ; 0            ; 198 (198)    ; 0 (0)             ; 24 (24)          ; 21 (21)         ; 0 (0)      ; |game|lcd:u2               ; work         ;
+;    |sjs:u6|                ; 80 (80)     ; 24           ; 0          ; 0    ; 0            ; 56 (56)      ; 0 (0)             ; 24 (24)          ; 0 (0)           ; 0 (0)      ; |game|sjs:u6               ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; fmq:u5|L_2[3..8,10,12..15]              ; Stuck at GND due to stuck port data_in ;
+; fmq:u5|L_5[0..1,4..5,7,11..13,16]       ; Stuck at GND due to stuck port data_in ;
+; fmq:u5|M_1[0,4..5,7,9,11,13..14,16]     ; Stuck at GND due to stuck port data_in ;
+; fmq:u5|M_2[0..1,3..7,9,11..14,16]       ; Stuck at GND due to stuck port data_in ;
+; fmq:u5|M_3[1..6,8,11,15..16]            ; Stuck at GND due to stuck port data_in ;
+; fmq:u5|M_4[0..2,5..9,12,15..16]         ; Stuck at GND due to stuck port data_in ;
+; fmq:u5|M_5[0,3..4,6,10..12,15..16]      ; Stuck at GND due to stuck port data_in ;
+; fmq:u5|M_6[3..5,8..10,13,15..16]        ; Stuck at GND due to stuck port data_in ;
+; fmq:u5|M_7[0,3..5,12..13,15..16]        ; Stuck at GND due to stuck port data_in ;
+; fmq:u5|H_1[3..4,6,8,10,12..13,15..16]   ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|col_1[0..1]                ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|col_1[2..5]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|col_1[6..7]                ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|col_2[0]                   ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|col_2[1]                   ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|col_2[2..5]                ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|col_2[6]                   ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|col_2[7]                   ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|col_3[0]                   ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|col_3[1..6]                ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|col_3[7]                   ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|col_4[0..7]                ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|col_5[0..7]                ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|col_6[0]                   ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|col_6[1..2]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|col_6[3..4]                ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|col_6[5..6]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|col_6[7]                   ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|col_7[0]                   ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|col_7[1..2]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|col_7[3..4]                ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|col_7[5..6]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|col_7[7]                   ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|col_8[0..7]                ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data67[0]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data67[1..2]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data67[3]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data67[4..5]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data67[6]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data67[7]                ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data66[0]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data66[1..2]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data66[3]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data66[4..5]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data66[6]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data66[7]                ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data65[0]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data65[1..2]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data65[3]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data65[4..5]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data65[6]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data65[7]                ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data64[0..3]             ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data64[4..7]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data63[0]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data63[1..2]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data63[3]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data63[4..5]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data63[6]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data63[7]                ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data62[0]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data62[1..2]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data62[3]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data62[4..7]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data61[0]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data61[1..2]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data61[3]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data61[4..7]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data60[0..7]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data57[0..7]             ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data56[0]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data56[1..5]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data56[6]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data56[7]                ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data55[0]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data55[1..5]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data55[6]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data55[7]                ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data54[0]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data54[1..5]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data54[6]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data54[7]                ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data53[0..2]             ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data53[3..5]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data53[6..7]             ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data52[0]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data52[1..7]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data51[0]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data51[1..7]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data50[0..2]             ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data50[3..4]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data50[5..7]             ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data47[0..7]             ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data46[0]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data46[1..6]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data46[7]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data45[0]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data45[1..6]             ; Stuck at GND due to stuck port data_in ;
+; dianzheng:u3|s_data45[7]                ; Stuck at VCC due to stuck port data_in ;
+; dianzheng:u3|s_data44[0..7]             ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 732 ;                                        ;
++-----------------------------------------+----------------------------------------+
+* Table truncated at 100 items. To change the number of removed registers reported, set the "Number of Removed Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 414   ;
+; Number of registers using Synchronous Clear  ; 94    ;
+; Number of registers using Synchronous Load   ; 15    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 240   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |game|fmq:u5|cnt1[11]              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |game|sjs:u6|s_dataout[3]          ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |game|fmq:u5|i[18]                 ;
+; 4:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |game|fmq:u5|CntMusic[7]           ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |game|dianzheng:u3|s_row[1]        ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |game|fmq:u5|cnt[6]                ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |game|jp:u1|delay[19]              ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |game|sjs:u6|s_dataout[7]          ;
+; 7:1                ; 24 bits   ; 96 LEs        ; 0 LEs                ; 96 LEs                 ; Yes        ; |game|control:u4|temporary2[17]    ;
+; 7:1                ; 26 bits   ; 104 LEs       ; 26 LEs               ; 78 LEs                 ; Yes        ; |game|control:u4|Cnt[18]           ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |game|control:u4|s_dianzhendata[0] ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |game|sjs:u6|s_dataout[11]         ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |game|exchange:u8|outdata[10]      ;
+; 9:1                ; 20 bits   ; 120 LEs       ; 20 LEs               ; 100 LEs                ; Yes        ; |game|control:u4|s_data2[1]        ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |game|exchange:u8|outdata[20]      ;
+; 8:1                ; 20 bits   ; 100 LEs       ; 20 LEs               ; 80 LEs                 ; Yes        ; |game|control:u4|temporary1[17]    ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 4 LEs                ; 24 LEs                 ; Yes        ; |game|control:u4|s_data2[20]       ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |game|sjs:u6|s_dataout[15]         ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |game|sjs:u6|s_dataout[16]         ;
+; 13:1               ; 4 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |game|sjs:u6|s_dataout[23]         ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; Yes        ; |game|exchange:u8|outdata[19]      ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |game|exchange:u8|outdata[0]       ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; Yes        ; |game|exchange:u8|outdata[15]      ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; Yes        ; |game|exchange:u8|outdata[4]       ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 4 LEs                ; 36 LEs                 ; Yes        ; |game|control:u4|temporary1[21]    ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |game|control:u4|i[0]              ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 4 LEs                ; 18 LEs                 ; Yes        ; |game|control:u4|NumCnt[1]         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |game|fmq:u5|Mux0                  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |game|fmq:u5|Mux14                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |game|sjs:u6|shuzi3~17             ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 6 LEs                ; 14 LEs                 ; No         ; |game|jp:u1|Mux5                   ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; No         ; |game|invariable_number:u7|Mux49   ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 6 LEs                ; 14 LEs                 ; No         ; |game|jp:u1|Mux7                   ;
+; 38:1               ; 4 bits    ; 100 LEs       ; 80 LEs               ; 20 LEs                 ; No         ; |game|lcd:u2|Mux99                 ;
+; 38:1               ; 3 bits    ; 75 LEs        ; 51 LEs               ; 24 LEs                 ; No         ; |game|lcd:u2|Mux104                ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 10 LEs               ; 2 LEs                  ; No         ; |game|invariable_number:u7|Mux48   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Nov 16 20:09:18 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off game -c game
+Info: Found 2 design units, including 1 entities, in source file jp.vhd
+    Info: Found design unit 1: jp-jp
+    Info: Found entity 1: jp
+Info: Found 2 design units, including 1 entities, in source file lcd.vhd
+    Info: Found design unit 1: lcd-lcd
+    Info: Found entity 1: lcd
+Info: Found 2 design units, including 1 entities, in source file dianzheng.vhd
+    Info: Found design unit 1: dianzheng-dianzheng
+    Info: Found entity 1: dianzheng
+Info: Found 2 design units, including 1 entities, in source file fmq.vhd
+    Info: Found design unit 1: fmq-fmq
+    Info: Found entity 1: fmq
+Info: Found 2 design units, including 1 entities, in source file sjs.vhd
+    Info: Found design unit 1: sjs-sjs
+    Info: Found entity 1: sjs
+Info: Found 2 design units, including 1 entities, in source file invariable_number.vhd
+    Info: Found design unit 1: invariable_number-example
+    Info: Found entity 1: invariable_number
+Info: Found 2 design units, including 1 entities, in source file control.vhd
+    Info: Found design unit 1: control-control
+    Info: Found entity 1: control
+Info: Found 2 design units, including 1 entities, in source file game.vhd
+    Info: Found design unit 1: game-behavior
+    Info: Found entity 1: game
+Info: Found 2 design units, including 1 entities, in source file exchange.vhd
+    Info: Found design unit 1: exchange-behavior
+    Info: Found entity 1: exchange
+Info: Elaborating entity "game" for the top level hierarchy
+Info: Elaborating entity "jp" for hierarchy "jp:u1"
+Info: Elaborating entity "lcd" for hierarchy "lcd:u2"
+Warning (10037): Verilog HDL or VHDL warning at lcd.vhd(52): conditional expression evaluates to a constant
+Warning (10492): VHDL Process Statement warning at lcd.vhd(75): signal "jqs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at lcd.vhd(76): signal "jqs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at lcd.vhd(77): signal "jqs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at lcd.vhd(78): signal "jqs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at lcd.vhd(79): signal "jqs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at lcd.vhd(80): signal "jqs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at lcd.vhd(90): signal "step" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10027): Verilog HDL or VHDL warning at the lcd.vhd(90): index expression is not wide enough to address all of the elements in the array
+Warning (10492): VHDL Process Statement warning at lcd.vhd(94): signal "yhs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at lcd.vhd(95): signal "yhs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at lcd.vhd(96): signal "yhs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at lcd.vhd(97): signal "yhs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at lcd.vhd(98): signal "yhs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at lcd.vhd(99): signal "yhs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "dianzheng" for hierarchy "dianzheng:u3"
+Info: Elaborating entity "control" for hierarchy "control:u4"
+Warning (10036): Verilog HDL or VHDL warning at control.vhd(43): object "k" assigned a value but never read
+Info: Elaborating entity "fmq" for hierarchy "fmq:u5"
+Warning (10036): Verilog HDL or VHDL warning at fmq.vhd(23): object "L_1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at fmq.vhd(25): object "L_3" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at fmq.vhd(26): object "L_4" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at fmq.vhd(28): object "L_6" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at fmq.vhd(29): object "L_7" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at fmq.vhd(38): object "H_2" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at fmq.vhd(39): object "H_3" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at fmq.vhd(40): object "H_4" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at fmq.vhd(41): object "H_5" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at fmq.vhd(42): object "H_6" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at fmq.vhd(43): object "H_7" assigned a value but never read
+Info: Elaborating entity "sjs" for hierarchy "sjs:u6"
+Info: Elaborating entity "invariable_number" for hierarchy "invariable_number:u7"
+Info: Elaborating entity "exchange" for hierarchy "exchange:u8"
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "RW" is stuck at GND
+    Warning (13410): Pin "RG[0]" is stuck at GND
+    Warning (13410): Pin "RG[1]" is stuck at GND
+    Warning (13410): Pin "RG[2]" is stuck at GND
+    Warning (13410): Pin "RG[3]" is stuck at GND
+    Warning (13410): Pin "RG[4]" is stuck at GND
+    Warning (13410): Pin "RG[5]" is stuck at GND
+    Warning (13410): Pin "RG[6]" is stuck at GND
+    Warning (13410): Pin "RG[7]" is stuck at GND
+Info: Implemented 1399 device resources after synthesis - the final resource count might be different
+    Info: Implemented 6 input pins
+    Info: Implemented 55 output pins
+    Info: Implemented 1338 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 37 warnings
+    Info: Peak virtual memory: 270 megabytes
+    Info: Processing ended: Thu Nov 16 20:09:25 2017
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
+
+

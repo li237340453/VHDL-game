@@ -1,0 +1,124 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2009 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+# Date created = 21:25:10  November 09, 2017
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		game_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX II"
+set_global_assignment -name DEVICE EPM1270T144C5
+set_global_assignment -name TOP_LEVEL_ENTITY game
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.0 SP2"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:25:10  NOVEMBER 09, 2017"
+set_global_assignment -name LAST_QUARTUS_VERSION "9.0 SP2"
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 144
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 5
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR 3.3V
+set_global_assignment -name VHDL_FILE jp.vhd
+set_global_assignment -name VHDL_FILE lcd.vhd
+set_global_assignment -name VHDL_FILE dianzheng.vhd
+set_global_assignment -name VHDL_FILE fmq.vhd
+set_global_assignment -name VHDL_FILE sjs.vhd
+set_global_assignment -name VHDL_FILE invariable_number.vhd
+set_global_assignment -name VHDL_FILE control.vhd
+set_global_assignment -name VHDL_FILE game.vhd
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name VHDL_FILE exchange.vhd
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_8 -to C[7]
+set_location_assignment PIN_7 -to C[6]
+set_location_assignment PIN_6 -to C[5]
+set_location_assignment PIN_5 -to C[4]
+set_location_assignment PIN_4 -to C[3]
+set_location_assignment PIN_3 -to C[2]
+set_location_assignment PIN_2 -to C[1]
+set_location_assignment PIN_1 -to C[0]
+set_location_assignment PIN_18 -to CLK
+set_location_assignment PIN_62 -to cout[6]
+set_location_assignment PIN_59 -to cout[5]
+set_location_assignment PIN_58 -to cout[4]
+set_location_assignment PIN_57 -to cout[3]
+set_location_assignment PIN_55 -to cout[2]
+set_location_assignment PIN_53 -to cout[1]
+set_location_assignment PIN_52 -to cout[0]
+set_location_assignment PIN_31 -to dout[7]
+set_location_assignment PIN_30 -to dout[6]
+set_location_assignment PIN_70 -to dout[5]
+set_location_assignment PIN_69 -to dout[4]
+set_location_assignment PIN_68 -to dout[3]
+set_location_assignment PIN_67 -to dout[2]
+set_location_assignment PIN_66 -to dout[1]
+set_location_assignment PIN_63 -to dout[0]
+set_location_assignment PIN_108 -to EN
+set_location_assignment PIN_60 -to FengMingQi
+set_location_assignment PIN_120 -to JPCol[3]
+set_location_assignment PIN_119 -to JPCol[2]
+set_location_assignment PIN_118 -to JPCol[1]
+set_location_assignment PIN_117 -to JPCol[0]
+set_location_assignment PIN_114 -to JPRow[3]
+set_location_assignment PIN_113 -to JPRow[2]
+set_location_assignment PIN_112 -to JPRow[1]
+set_location_assignment PIN_111 -to JPRow[0]
+set_location_assignment PIN_134 -to mode
+set_location_assignment PIN_107 -to Qdata[7]
+set_location_assignment PIN_106 -to Qdata[6]
+set_location_assignment PIN_105 -to Qdata[5]
+set_location_assignment PIN_104 -to Qdata[4]
+set_location_assignment PIN_103 -to Qdata[3]
+set_location_assignment PIN_102 -to Qdata[2]
+set_location_assignment PIN_110 -to Qdata[1]
+set_location_assignment PIN_101 -to Qdata[0]
+set_location_assignment PIN_38 -to RG[7]
+set_location_assignment PIN_39 -to RG[6]
+set_location_assignment PIN_40 -to RG[5]
+set_location_assignment PIN_41 -to RG[4]
+set_location_assignment PIN_42 -to RG[3]
+set_location_assignment PIN_43 -to RG[2]
+set_location_assignment PIN_44 -to RG[1]
+set_location_assignment PIN_45 -to RG[0]
+set_location_assignment PIN_11 -to RR[7]
+set_location_assignment PIN_12 -to RR[6]
+set_location_assignment PIN_13 -to RR[5]
+set_location_assignment PIN_14 -to RR[4]
+set_location_assignment PIN_15 -to RR[3]
+set_location_assignment PIN_16 -to RR[2]
+set_location_assignment PIN_21 -to RR[1]
+set_location_assignment PIN_22 -to RR[0]
+set_location_assignment PIN_48 -to RS
+set_location_assignment PIN_109 -to RW
+set_global_assignment -name MISC_FILE "G:/×îÖÕµÄvhdl/game/game.dpf"

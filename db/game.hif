@@ -1,0 +1,433 @@
+Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+42
+3099
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+jp
+# storage
+db|game.(1).cnf
+db|game.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+jp.vhd
+63f7acba2e1e1c1a6545912fd613e67
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(row)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(num)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(col)
+3 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+jp:u1
+}
+# lmf
+e:|quartus|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+lcd
+# storage
+db|game.(2).cnf
+db|game.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+lcd.vhd
+35a420328fccb636dd13fffb43eae9a3
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(step)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(jqs)
+23 downto 0
+PARAMETER_STRING
+USR
+ constraint(yhs)
+23 downto 0
+PARAMETER_STRING
+USR
+ constraint(data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+lcd:u2
+}
+# lmf
+e:|quartus|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+dianzheng
+# storage
+db|game.(3).cnf
+db|game.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+dianzheng.vhd
+14eab8e855ab1454e9a2ba31402c56ff
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(number)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(rowred)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(rowgreen)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(col)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+dianzheng:u3
+}
+# lmf
+e:|quartus|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+fmq
+# storage
+db|game.(5).cnf
+db|game.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+fmq.vhd
+5138d374ffe6cb2673eae8e437cdb78
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+fmq:u5
+}
+# lmf
+e:|quartus|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+sjs
+# storage
+db|game.(6).cnf
+db|game.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+sjs.vhd
+6c94e2887ab429576153abd18ad74fb
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(dataout)
+23 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+sjs:u6
+}
+# lmf
+e:|quartus|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+invariable_number
+# storage
+db|game.(7).cnf
+db|game.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+invariable_number.vhd
+df301c71c8ad79172e8ed977ece1ad
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(cout)
+6 downto 0
+PARAMETER_STRING
+USR
+ constraint(dout)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(data)
+23 downto 0
+PARAMETER_STRING
+USR
+ constraint(guan)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+invariable_number:u7
+}
+# lmf
+e:|quartus|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+exchange
+# storage
+db|game.(8).cnf
+db|game.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+exchange.vhd
+711933d8396daad6704af362b2679538
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(indata)
+23 downto 0
+PARAMETER_STRING
+USR
+ constraint(outdata)
+23 downto 0
+PARAMETER_STRING
+USR
+ constraint(guan)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+exchange:u8
+}
+# lmf
+e:|quartus|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+game
+# storage
+db|game.(0).cnf
+db|game.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+game.vhd
+6e79a111c97f7862dbc97b28cf1020
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+|
+}
+# lmf
+e:|quartus|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+control
+# storage
+db|game.(4).cnf
+db|game.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+control.vhd
+3978e3d6b8e27c1bc3896768a67bace
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(num)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(rdata1)
+23 downto 0
+PARAMETER_STRING
+USR
+ constraint(dainzhen8x8)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(guannum)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(display1)
+23 downto 0
+PARAMETER_STRING
+USR
+ constraint(display2)
+23 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+control:u4
+}
+# lmf
+e:|quartus|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# complete
+

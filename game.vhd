@@ -1,0 +1,192 @@
+
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all; 
+
+LIBRARY work;
+
+ENTITY game IS 
+	PORT
+	(
+		CLK :  IN  STD_LOGIC;
+		JPRow :  IN  STD_LOGIC_VECTOR(3 DOWNTO 0);
+		RW :  OUT  STD_LOGIC;
+		EN :  OUT  STD_LOGIC;
+		RS :  OUT  STD_LOGIC;
+		FengMingQi :  OUT  STD_LOGIC;
+		C :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		JPCol :  OUT  STD_LOGIC_VECTOR(3 DOWNTO 0);
+		Qdata :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		RG :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		RR :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		mode :in std_logic;
+		cout:OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		dout:out std_logic_vector(7 downto 0)
+	);
+END game;
+
+ARCHITECTURE behavior OF game IS 
+
+COMPONENT jp
+	PORT(CLK : IN STD_LOGIC;
+		 row : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		 anxia : OUT STD_LOGIC;
+		 col : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+		 num : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT lcd
+	PORT(CLK : IN STD_LOGIC;
+		 jqs : IN STD_LOGIC_VECTOR(23 DOWNTO 0);
+		 yhs : IN STD_LOGIC_VECTOR(23 DOWNTO 0);
+		 step : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+		 RW : OUT STD_LOGIC;
+		 EN : OUT STD_LOGIC;
+		 RS : OUT STD_LOGIC;
+		 data : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT dianzheng
+	PORT(CLK : IN STD_LOGIC;
+		 number : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+		 col : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+		 rowgreen : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+		 rowred : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT control
+	PORT(CLK : IN STD_LOGIC;
+		 anxia : IN STD_LOGIC;
+		 Num : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		 rData1 : IN STD_LOGIC_VECTOR(23 DOWNTO 0);
+		 Start : OUT STD_LOGIC;
+		 Start1 : OUT STD_LOGIC;
+		 dainzhen8x8 : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+		 display1 : OUT STD_LOGIC_VECTOR(23 DOWNTO 0);
+		 display2 : OUT STD_LOGIC_VECTOR(23 DOWNTO 0);
+		 guannum : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT fmq
+	PORT(CLK_50Mhz : IN STD_LOGIC;
+		 Go : IN STD_LOGIC;
+		 Go1 : IN STD_LOGIC;
+		 clkout : OUT STD_LOGIC
+	);
+END COMPONENT;
+
+COMPONENT sjs
+	PORT(CLK : IN STD_LOGIC;
+		 dataout : OUT STD_LOGIC_VECTOR(23 DOWNTO 0);
+		 mode              :in std_logic
+	);
+END COMPONENT;
+
+COMPONENT invariable_number
+	PORT(clk:in std_logic;
+--			clear:in std_logic;
+			cout:out std_logic_vector(6 downto 0);
+			dout:out std_logic_vector(7 downto 0);
+			data:in std_logic_vector(23 downto 0);
+			guan:in std_logic_vector(2 downto 0)
+	);
+END COMPONENT;
+
+COMPONENT exchange
+	PORT(indata:in std_logic_vector(23 downto 0);
+     outdata:out std_logic_vector(23 downto 0);
+     guan:in std_logic_vector(2 downto 0);
+     mode:in std_logic;
+     clk:in std_logic
+    );
+END COMPONENT;
+
+SIGNAL	string_0 :  STD_LOGIC_VECTOR(23 DOWNTO 0);
+SIGNAL	string_1 :  STD_LOGIC_VECTOR(23 DOWNTO 0);
+SIGNAL	string_2 :  STD_LOGIC_VECTOR(2 DOWNTO 0);
+SIGNAL	string_3 :  STD_LOGIC_VECTOR(2 DOWNTO 0);
+SIGNAL	string_4 :  STD_LOGIC;
+SIGNAL	string_5 :  STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL	string_6 :  STD_LOGIC_VECTOR(23 DOWNTO 0);
+SIGNAL	string_7 :  STD_LOGIC;
+SIGNAL	string_8 :  STD_LOGIC;
+SIGNAL	string_9 :  STD_LOGIC_VECTOR(23 DOWNTO 0);
+
+
+BEGIN 
+
+
+
+u1 : jp
+PORT MAP(CLK => CLK,
+		 row => JPRow,
+		 anxia => string_4,
+		 col => JPCol,
+		 num => string_5);
+
+
+u2 : lcd
+PORT MAP(CLK => CLK,
+		 jqs => string_9,
+		 yhs => string_1,
+		 step => string_2,
+		 RW => RW,
+		 EN => EN,
+		 RS => RS,
+		 data => Qdata);
+
+
+u3 : dianzheng
+PORT MAP(CLK => CLK,
+		 number => string_3,
+		 col => C,
+		 rowred => RG,
+		 rowgreen => RR);
+
+
+u4 : control
+PORT MAP(CLK => CLK,
+		 anxia => string_4,
+		 Num => string_5,
+		 rData1 => string_6,
+		 Start => string_7,
+		 Start1 => string_8,
+		 dainzhen8x8 => string_3,
+		 display1 => string_0,
+		 display2 => string_1,
+		 guannum => string_2);
+
+
+u5 : fmq
+PORT MAP(CLK_50Mhz => CLK,
+		 Go => string_7,
+		 Go1 => string_8,
+		 clkout => FengMingQi);
+
+
+u6 : sjs
+PORT MAP(CLK => CLK,
+		 dataout => string_6,
+		 mode => mode);
+		 
+u7 : invariable_number
+PORT MAP(clk => CLK,
+		 cout => cout,
+		 dout => dout,
+		 data => string_1,
+		 guan => string_2);
+		 
+u8 : exchange
+PORT MAP(indata => string_0,
+         outdata => string_9,
+         guan => string_2,
+         mode => mode,
+         clk => CLK
+         );
+
+
+END behavior;

@@ -1,0 +1,99 @@
+Library ieee;
+Use ieee.std_logic_1164.all;
+Use ieee.std_logic_unsigned.all;
+
+entity exchange is
+port(indata:in std_logic_vector(23 downto 0);
+     outdata:out std_logic_vector(23 downto 0);
+     guan:in std_logic_vector(2 downto 0);
+     mode:in std_logic;
+     clk:in std_logic);
+end exchange;
+
+architecture behavior of exchange is
+begin
+--	process(clk)
+--    variable i:integer range 0 to 10;
+--	begin
+--	if(mode='1')then
+--		   if(clk'event and clk='1')then
+--			  if(indata=x"FFFFFF")then
+----              if(true)then
+--				 if(i<10)then
+--					 i:=i+1;
+--				 else
+--					 i:=0;
+--				 end if;
+--			  end if;
+--			  
+--			  if(lastrnumber/=indata)then
+--		         lastrnumber<=indata;
+--		         rnumber<=indata;
+--		      end if;
+--		     if(rnumber/=x"FFFFFF")then
+--			  if(i>0)then
+--			    if(i=2 or i=4 or i=4 or i=6 or i=8 or i=10)then
+--				  case guan is
+--					   when "011" => rnumber<=rnumber(3 downto 0)&rnumber(23 downto 4); 
+--					   when others => rnumber<=rnumber(23 downto 20)&rnumber(3 downto 0)&rnumber(19 downto 4);
+--				  end case;
+--				else
+--			      case guan is
+--					   when "011" => rnumber<=rnumber(7 downto 4)&rnumber(23 downto 8)&rnumber(3 downto 0); 
+--					   when others => rnumber<=rnumber(23 downto 20)&rnumber(7 downto 4)&rnumber(19 downto 8)&rnumber(3 downto 0);
+--				  end case;
+--				end if;
+--				i:=i-1;
+--			  end if;
+--			 end if;
+--		   end if;
+--	else
+--	       rnumber<=indata;	
+--    end if;
+--    iout<=i;
+--    end process;
+--outdata<=rnumber;
+
+     process(clk)
+     variable i:integer range 0 to 8;
+     begin
+         if(clk'event and clk='1')then
+             if(indata=x"FFFFFF")then
+                 i:=i+1;
+             else
+                 i:=i;
+             end if;
+             if(mode='1')then
+				 if(guan="011")then
+					 case i is
+						 when 0 => outdata<=indata(23 downto 20)&indata(11 downto 8)&indata(3 downto 0)&indata(7 downto 4)&indata(19 downto 16)&indata(15 downto 12);
+						 when 1 => outdata<=indata(23 downto 20)&indata(15 downto 12)&indata(7 downto 4)&indata(19 downto 16)&indata(11 downto 8)&indata(3 downto 0);
+						 when 2 => outdata<=indata(23 downto 20)&indata(19 downto 16)&indata(7 downto 4)&indata(11 downto 8)&indata(3 downto 0)&indata(15 downto 12);
+						 when 3 => outdata<=indata(7 downto 4)&indata(23 downto 20)&indata(3 downto 0)&indata(11 downto 8)&indata(15 downto 12)&indata(19 downto 16);
+						 when 4 => outdata<=indata(11 downto 8)&indata(19 downto 16)&indata(7 downto 4)&indata(3 downto 0)&indata(15 downto 12)&indata(23 downto 20);
+						 when 5 => outdata<=indata(15 downto 12)&indata(7 downto 4)&indata(19 downto 16)&indata(3 downto 0)&indata(23 downto 20)&indata(11 downto 8);
+						 when 6 => outdata<=indata(19 downto 16)&indata(3 downto 0)&indata(23 downto 20)&indata(7 downto 4)&indata(11 downto 8)&indata(15 downto 12);
+						 when 7 => outdata<=indata(15 downto 12)&indata(23 downto 20)&indata(19 downto 16)&indata(11 downto 8)&indata(7 downto 4)&indata(3 downto 0);
+--						 when 8 => outdata<=indata(11 downto 8)&indata(23 downto 20)&indata(3 downto 0)&indata(19 downto 16)&indata(7 downto 4)&indata(15 downto 12);
+						 when others => outdata<=indata(3 downto 0)&indata(15 downto 12)&indata(23 downto 20)&indata(7 downto 4)&indata(19 downto 16)&indata(11 downto 8);
+					 end case;
+				else 
+					 case i is
+						 when 0 => outdata<=indata(23 downto 20)&indata(11 downto 8)&indata(3 downto 0)&indata(7 downto 4)&indata(19 downto 16)&indata(15 downto 12);
+						 when 1 => outdata<=indata(23 downto 20)&indata(15 downto 12)&indata(7 downto 4)&indata(19 downto 16)&indata(11 downto 8)&indata(3 downto 0);
+						 when 2 => outdata<=indata(23 downto 20)&indata(19 downto 16)&indata(7 downto 4)&indata(11 downto 8)&indata(3 downto 0)&indata(15 downto 12);
+						 when 3 => outdata<=indata(23 downto 20)&indata(7 downto 4)&indata(3 downto 0)&indata(11 downto 8)&indata(15 downto 12)&indata(19 downto 16);
+						 when 4 => outdata<=indata(23 downto 20)&indata(19 downto 16)&indata(7 downto 4)&indata(3 downto 0)&indata(15 downto 12)&indata(11 downto 8);
+						 when 5 => outdata<=indata(23 downto 20)&indata(7 downto 4)&indata(19 downto 16)&indata(3 downto 0)&indata(15 downto 12)&indata(11 downto 8);
+						 when 6 => outdata<=indata(23 downto 20)&indata(3 downto 0)&indata(19 downto 16)&indata(7 downto 4)&indata(11 downto 8)&indata(15 downto 12);
+						 when 7 => outdata<=indata(23 downto 20)&indata(15 downto 12)&indata(19 downto 16)&indata(11 downto 8)&indata(7 downto 4)&indata(3 downto 0);
+--						 when 8 => outdata<=indata(23 downto 20)&indata(11 downto 8)&indata(3 downto 0)&indata(19 downto 16)&indata(7 downto 4)&indata(15 downto 12);
+						 when others => outdata<=indata(23 downto 20)&indata(15 downto 12)&indata(3 downto 0)&indata(7 downto 4)&indata(19 downto 16)&indata(11 downto 8);
+					 end case;
+				end if;
+		     else
+                 outdata<=indata;
+             end if;
+         end if;      
+     end process;          
+end;
